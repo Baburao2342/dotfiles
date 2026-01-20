@@ -10,4 +10,7 @@ go/
 chromium/
 dconf/
 session/
+pulse/
+xdg-desktop-portal/
+systemd/
 
