@@ -1,0 +1,9 @@
+2026/01/20-18:44:27.964 fb4c Reusing MANIFEST /home/dog/.config/chromium/Default/IndexedDB/https_www.perplexity.ai_0.indexeddb.leveldb/MANIFEST-000001
+2026/01/20-18:44:27.965 fb4c Recovering log #92
+2026/01/20-18:44:27.970 fb4c Reusing old log /home/dog/.config/chromium/Default/IndexedDB/https_www.perplexity.ai_0.indexeddb.leveldb/000092.log 
+2026/01/20-18:44:32.396 fb4e Compacting 2@0 + 0@1 files
+2026/01/20-18:44:32.406 fb4e Generated table #96@0: 336 keys, 67647 bytes
+2026/01/20-18:44:32.407 fb4e Compacted 2@0 + 0@1 files => 67647 bytes
+2026/01/20-18:44:32.408 fb4e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/01/20-18:44:32.408 fb4e Delete type=2 #91
+2026/01/20-18:44:32.408 fb4e Delete type=2 #93
