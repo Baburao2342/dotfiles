@@ -11,15 +11,14 @@
         "hyprland/mode"
     ],
     "modules-center": [
+        "clock",
     ],
     "modules-right": [
         "mpd",
         "pulseaudio",
         "bluetooth",
         "network",
-        "backlight",
         "battery",
-        "clock",
         "tray",
         "custom/power"
     ],

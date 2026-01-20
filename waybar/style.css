@@ -70,6 +70,7 @@ button:hover {
 #bluetooth {
     font-family: "MartianMono Nerd Font";
     font-size: inherit;
+    font-weight: 500;
     padding: 4px 10px;
     margin: 2px 3px;
     color: #ffffff;
@@ -155,7 +156,9 @@ button:hover {
     border: 2px solid rgba(100, 114, 125, 0.6);
 }
 
-#bluetooth,
+#bluetooth {
+    border: 2px solid rgba(100, 200, 255, 1); 
+}
 
 #tray {
     border: 2px solid rgba(186, 194, 222, 1);
