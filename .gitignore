@@ -6,4 +6,8 @@ mimeapps.list
 pavucontrol.ini
 user-dirs.dirs 
 user-dirs.locale
+go/
+chromium/
+dconf/
+session/
 
