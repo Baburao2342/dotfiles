@@ -27,12 +27,6 @@ return {
             "neovim/nvim-lspconfig",
         },
     },
-    {
-        "neovim/nvim-lspconfig",
-        config = function()
-            vim.lsp.enable('pyright', 'lua_ls')
-        end
-    },
 
     -- Autocompletion
 

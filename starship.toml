@@ -1,205 +1,318 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
-[aws]
-symbol = " "
+add_newline = true
+command_timeout = 500
 
-[buf]
-symbol = " "
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$ruby\
+$rust\
+$golang\
+$docker_context\
+$aws\
+$azure\
+$gcloud\
+$nix_shell\
+$conda\
+$direnv\
+$kotlin\
+$lua\
+$php\
+$perl\
+$c\
+$cpp\
+$cmake\
+$java\
+$elixir\
+$elm\
+$erlang\
+$haskell\
+$julia\
+$nim\
+$ocaml\
+$swift\
+$zig\
+$gradle\
+$dotnet\
+$package\
+$cmake\
+$docker_context\
+$status\
+$cmd_duration\
+$time\
+$character"""
 
-[bun]
-symbol = " "
-
-[c]
-symbol = " "
-
-[cpp]
-symbol = " "
-
-[cmake]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[deno]
-symbol = " "
+[character]
+success_symbol = "[❯](bold #00ff88)"
+error_symbol = "[❯](bold #ff0055)"
 
 [directory]
-read_only = " 󰌾"
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fortran]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[gcloud]
-symbol = " "
+style = "bold #00d9ff"
+format = "[$path]($style) "
+truncation_length = 3
+truncate_to_repo = true
+home_symbol = "~"
 
 [git_branch]
-symbol = " "
+symbol = "⎇ "
+format = "[$symbol($branch)]($style) "
+style = "bold #ffaa00"
+truncation_length = 20
+truncation_symbol = "…"
 
-[git_commit]
-tag_symbol = '  '
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+style = "bold #ff6b9d"
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
 
-[golang]
-symbol = " "
-
-[gradle]
-symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
+[username]
+show_always = false
+format = "[$user]($style) "
+style_user = "bold #ffaa00"
+style_root = "bold #ff0055"
 
 [hostname]
-ssh_symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[kotlin]
-symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
+ssh_only = true
+format = "on [$hostname]($style) "
+style = "bold #00d9ff"
 
 [nodejs]
-symbol = " "
-
-[ocaml]
-symbol = " "
-
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-AOSC = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Elementary = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Ios = "󰀷 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
-Zorin = " "
-
-[package]
-symbol = "󰏗 "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[pijul_channel]
-symbol = " "
-
-[pixi]
-symbol = "󰏗 "
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #90ee90"
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
 
 [python]
-symbol = " "
-
-[rlang]
-symbol = "󰟔 "
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #3776ab"
+python_binary = ["python3", "python", "python2"]
+detect_extensions = ["py"]
+detect_files = [".python-version", "Pipfile", "__pycache__", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
 
 [ruby]
-symbol = " "
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #cc342d"
+detect_extensions = ["rb"]
+detect_files = ["Gemfile", ".ruby-version", "Rakefile"]
 
 [rust]
-symbol = "󱘗 "
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #ce422b"
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml", "Cargo.lock"]
 
-[scala]
-symbol = " "
+[golang]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #00add8"
+detect_extensions = ["go"]
+detect_files = ["go.mod", "go.sum", "glide.yaml", "Gopkg.yml", "Gopkg.lock"]
 
-[status]
-symbol = " "
+[docker_context]
+symbol = " "
+format = "[$symbol($context)]($style) "
+style = "bold #2496ed"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+
+[aws]
+format = "[$symbol($profile)]($style) "
+symbol = " "
+style = "bold #ff9900"
+disabled = false
+
+[azure]
+format = "[$symbol($subscription)]($style) "
+symbol = " "
+style = "bold #0078d4"
+
+[gcloud]
+format = "[$symbol($project)]($style) "
+symbol = " "
+style = "bold #4285f4"
+
+[nix_shell]
+format = "[$symbol($state)]($style) "
+symbol = " "
+style = "bold #7bb3e0"
+
+[conda]
+format = "[$symbol($environment)]($style) "
+symbol = " "
+style = "bold #3ead06"
+truncation_length = 1
+
+[direnv]
+format = "[$symbol]($style) "
+symbol = " "
+style = "bold #2e8b57"
+
+[kotlin]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #7f52ff"
+detect_extensions = ["kt", "kts"]
+detect_files = ["kotlinc.xml", "pom.xml", "build.gradle.kts"]
+
+[lua]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #51a0cf"
+detect_extensions = ["lua"]
+detect_files = [".lua-version"]
+
+[php]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #777bb4"
+detect_extensions = ["php"]
+detect_files = ["composer.json", "composer.lock", ".php-version"]
+
+[perl]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #0073a1"
+detect_extensions = ["pl", "pm", "t"]
+
+[c]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #00007f"
+detect_extensions = ["c", "h"]
+
+[cpp]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #00599c"
+detect_extensions = ["cc", "cpp", "cxx", "c++", "hpp", "h"]
+
+[cmake]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #064f8c"
+detect_files = ["CMakeLists.txt"]
+
+[java]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #f89820"
+detect_extensions = ["java", "class", "gradle", "jar"]
+detect_files = ["pom.xml", "build.gradle.kts", "build.gradle"]
+
+[elixir]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #4e2a84"
+detect_extensions = ["ex", "exs"]
+detect_files = ["mix.exs", "mix.lock"]
+
+[elm]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #1293d8"
+detect_extensions = ["elm"]
+detect_files = ["elm.json", "elm-package.json"]
+
+[erlang]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #a90534"
+detect_extensions = ["erl"]
+detect_files = ["rebar.config", "erlang.mk"]
+
+[haskell]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #5e5086"
+detect_extensions = ["hs", "cabal"]
+detect_files = ["stack.yaml", "cabal.project"]
+
+[julia]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #9558b2"
+detect_extensions = ["jl"]
+detect_files = ["Project.toml", "Manifest.toml"]
+
+[nim]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #ffd100"
+detect_extensions = ["nim", "nims"]
+
+[ocaml]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #ec6813"
+detect_extensions = ["opam", "ml", "mli"]
+detect_files = ["dune", "dune-project", "jbuild"]
 
 [swift]
-symbol = " "
-
-[xmake]
-symbol = " "
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #fa7343"
+detect_extensions = ["swift"]
+detect_files = ["Package.swift"]
 
 [zig]
-symbol = " "
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #ec915c"
+detect_extensions = ["zig"]
+
+[gradle]
+symbol = " "
+format = "[$symbol]($style) "
+style = "bold #02303a"
+detect_files = ["build.gradle", "build.gradle.kts"]
+
+[dotnet]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #512bd4"
+detect_extensions = ["csproj", "fsproj"]
+detect_files = ["global.json", "project.json"]
+
+[package]
+symbol = " "
+format = "[$symbol($version)]($style) "
+style = "bold #ff6b6b"
+
+[cmd_duration]
+min_time = 500
+show_milliseconds = false
+format = " [$duration]($style) "
+style = "bold #ffd700"
+
+[time]
+disabled = true
+format = "🕙[$time]($style) "
+time_format = "%T"
+style = "bold white"
+
+[status]
+symbol = "✖"
+success_symbol = "✔"
+format = "[$symbol]($style) "
+style = "bold #ff0055"
+disabled = true

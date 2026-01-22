@@ -132,15 +132,15 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "alacritty -e wiremix"
     },
     "bluetooth": {
         "format": "󰂯",
         "format-off": "󰂲",
-        "format-connected": "Connected 󰂯 {device_alias}",
-        "format-connected": "Disconnected 󰂲",
+        "format-connected": "{device_alias} 󰂯",
+        "format-disconnected": "Disconnected 󰂲",
         "tooltip-format": "{controller_alias} {controller_address}",
-        "tooltip-format-connected": "{controller_alias}\n{device_enablerate}",
+        "tooltip-format-connected": "{controller_alias}\n{num_connections}",
         "interval": 2,
         "on-click": "alacritty -e bluetui"
     },
