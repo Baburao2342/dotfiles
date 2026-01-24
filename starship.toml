@@ -1,285 +1,205 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-palette = 'pastel_brite'
-# [pastel, pastel_brite, catppuccin_mocha]
+[aws]
+symbol = " "
 
-format = """
-[╭](gray)\
-[](bg0)\
-$os\
-$username\
-[](fg:bg0 bg:bg1)\
-$directory\
-[](fg:bg1 bg:bg2)\
-$git_branch\
-$git_status\
-[](fg:bg2 bg:bg3)\
-$c\
-$cpp\
-$elixir\
-$elm\
-$golang\
-$gradle\
-$haskell\
-$java\
-$julia\
-$kotlin\
-$nodejs\
-$nim\
-$php\
-$python\
-$rust\
-$scala\
-[](fg:bg3 bg:bg4)\
-$conda\
-$docker_context\
-$pixi\
-[](fg:bg4 bg:bg5)\
-$time\
-[](fg:bg5)\
-$cmd_duration\
-$line_break\
-[╰](gray)\
-$character
-"""
+[buf]
+symbol = " "
 
-[username]
-disabled = false
-show_always = true
-style_user = "bg:bg0 fg:text"
-style_root = "bg:bg0 fg:text"
-# symbol = "󰀄"
-format = '[$user ]($style)'
-
-[os]
-disabled = false
-style = "bg:bg0 fg:text"
-
-[os.symbols]
-Windows = "  "
-Ubuntu = " 󰕈 "
-SUSE = "  "
-Raspbian = " 󰐿 "
-Mint = " 󰣭 "
-Macos = " 󰀵 "
-Manjaro = "  "
-Linux = " 󰌽 "
-Gentoo = " 󰣨 "
-Fedora = " 󰣛 "
-Alpine = "  "
-Amazon = "  "
-Android = "  "
-Arch = " 󰣇 "
-Artix = " 󰣇 "
-CentOS = "  "
-Debian = " 󰣚 "
-Redhat = " 󱄛 "
-RedHatEnterprise = " 󱄛 "
-
-[directory]
-disabled = false
-style = "bg:bg1 fg:text"
-# home_symbol = ""
-format = "[  $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
-
-# Shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
-# [directory.substitutions]
-# "/Documents" = "/󰈙 "
-# "/Downloads" = "/ "
-# "/Music" = "/ "
-# "/Pictures" = "/ "
-# "/Videos" = "/ "
-# "/Audios" = "/ "
-# "/GitHub" = "/ "
-# "/.config" = "/ "
-# "/Develop" = "/󰲋 "
-# Keep in mind that the order matters. For example:
-# "/Important Documents" = "/󰈙 "
-# will not be replaced, because "/Documents" was already substituted before.
-# So either put "/Important Documents" before "/Documents" or use the substituted version:
-# "/Important 󰈙 " = "/󰈙 "
-
-[time]
-disabled = false
-time_format = "%R"
-style = "bg:bg5 fg:text"
-format = '[  $time ]($style)'
-
-[cmd_duration]
-disabled = false
-show_milliseconds = true
-show_notifications = true
-min_time = 100
-min_time_to_notify = 45000
-format = "[  in $duration ]($style)"
-style = "fg:lavender"
-
-[character]
-disabled = false
-success_symbol = '[❯](bold fg:green)'
-error_symbol = '[❯](bold fg:red)'
-
-[git_branch]
-symbol = ""
-style = "bg:bg2 fg:text"
-format = '[ $symbol $branch ]($style)'
-
-[git_status]
-disabled = false
-# ahead = " $count "
-# behind = " $count "
-# deleted = "﫧 $count "
-# diverged = " $count "
-# stashed = " $count "
-# modified = " $count "
-# staged = " $count "
-# renamed = " $count "
-# untracked = " $count "
-style = "bg:bg2 fg:text"
-format = '[($all_status$ahead_behind)]($style)'
-
-[conda]
-symbol = ""
-style = "bg:bg4 fg:text"
-format = '[ $symbol ($environment) ]($style)'
-ignore_base = false
-
-[docker_context]
-symbol = ""
-style = "bg:bg4 fg:text"
-format = '[ $symbol ($context) ]($style)'
-
-[pixi]
-style = "bg:bg4 fg:text"
-format = '[ $symbol ($version) ($environment) ]($style)'
+[bun]
+symbol = " "
 
 [c]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
 
 [cpp]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
+
+[docker_context]
+symbol = " "
 
 [elixir]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
 
 [elm]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fortran]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
 
 [golang]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
 
 [gradle]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+
+[guix_shell]
+symbol = " "
 
 [haskell]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
 
 [java]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
 
 [julia]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
 
 [kotlin]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
 
-[nodejs]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
 
 [nim]
-symbol = "󰆥"
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Elementary = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Ios = "󰀷 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+Zorin = " "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
 
 [php]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pixi]
+symbol = "󰏗 "
 
 [python]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
 
 [rust]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = "󱘗 "
 
 [scala]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
 
-[palettes.pastel]
-bg0 = '90'
-bg1 = '168'
-bg2 = '216'
-bg3 = '110'
-bg4 = '30'
-bg5 = '24'
-text = '231'
-lavender = '147'
-red = '161'
-yellow = '222'
-green = '77'
-white = '231'
-gray = '242'
-black = '16'
+[status]
+symbol = " "
 
-[palettes.pastel_brite]
-bg0 = '183'
-bg1 = '211'
-bg2 = '216'
-bg3 = '111'
-bg4 = '116'
-bg5 = '74'
-text = '16'
-lavender = '147'
-red = '161'
-yellow = '222'
-green = '77'
-white = '231'
-gray = '242'
-black = '16'
+[swift]
+symbol = " "
 
-[palettes.catppuccin_mocha]
-bg0 = '211'
-bg1 = '216'
-bg2 = '223'
-bg3 = '151'
-bg4 = '117'
-bg5 = '147'
-text = '16'
-lavender = '147'
-red = '161'
-yellow = '222'
-green = '77'
-white = '231'
-gray = '242'
-black = '16'
+[xmake]
+symbol = " "
+
+[zig]
+symbol = " "

@@ -28,6 +28,15 @@ return {
         },
     },
 
+    -- CSS Colors
+
+    {
+        "brenoprata10/nvim-highlight-colors",
+        config = function()
+            require("nvim-highlight-colors").setup({})
+        end,
+    },
+
     -- Autocompletion
 
     {
@@ -43,16 +52,23 @@ return {
             local cmp = require("cmp")
             cmp.setup({
                 snippet = { expand = function(args) require("luasnip").lsp_expand(args.body) end },
+                
                 mapping = cmp.mapping.preset.insert({
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 }),
+
+                formatting = {
+                    format = require("nvim-highlight-colors").format,
+                },
+
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                     { name = "buffer" },
                     { name = "path" },
                 }),
+                
                 window = {
                     completion = cmp.config.window.bordered({
                         border = "rounded",
