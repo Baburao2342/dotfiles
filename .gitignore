@@ -1,0 +1,21 @@
+# Ignores everything
+*
+
+# Allow root files
+!.gitignore
+!dunst/
+!kitty/
+!rofi/
+!waybar/
+!wlogout/
+!hypr/
+!yazi/
+!starship.toml
+
+!dunst/**
+!kitty/**
+!rofi/**
+!waybar/**
+!wlogout/**
+!hypr/**
+!yazi/**
