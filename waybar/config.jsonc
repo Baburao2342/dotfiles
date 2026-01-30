@@ -112,6 +112,7 @@
         "format-disconnected": "Disconnected ⚠",
         "on-click": "kitty -e wlctl"
     },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
@@ -119,15 +120,14 @@
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": " ",
             "hands-free": " ",
             "headset": " ",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "phone": " ",
+            "portable": " ",
+            "default": ["", " ", " "]
         },
         "on-click": "kitty -e wiremix"
     },
