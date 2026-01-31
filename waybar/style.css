@@ -1,5 +1,5 @@
 * {
-    font-family: "CaskaydiaCove Nerd Font", sans-serif;
+    font-family: "Inconsolata Nerd Font Bold", sans-serif;
     font-size: 14px;
     min-height: 0;
     border-radius: 0;
@@ -68,7 +68,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd,
 #bluetooth {
-    font-family: "CaskaydiaCove Nerd Font";
+    font-family: "Inconsolata Nerd Font Bold";
     font-size: inherit;
     font-weight: 500;
     padding: 4px 10px;
@@ -122,18 +122,6 @@ button:hover {
     animation-direction: alternate;
 }
 
-#cpu {
-    border: 2px solid rgba(243, 139, 168, 1);
-}
-
-#memory {
-    border: 2px solid rgba(203, 166, 247, 1);
-}
-
-#disk {
-    border: 2px solid rgba(250, 179, 135, 1);
-}
-
 #backlight {
     border: 2px solid rgba(249, 226, 175, 1);
 }
@@ -180,31 +168,6 @@ button:hover {
     border: 2px solid rgba(166, 227, 161, 1);
 }
 
-#language {
-    border: 2px solid rgba(180, 190, 254, 1);
-    padding: 0 8px;
-    margin: 0 3px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    border: 2px solid rgba(186, 194, 222, 1);
-    padding: 0;
-    margin: 0 3px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 8px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(166, 227, 161, 0.3);
-}
-
-#scratchpad {
-    border: 2px solid rgba(203, 166, 247, 1);
-}
 
 #custom-power,
 #custom-exit,
