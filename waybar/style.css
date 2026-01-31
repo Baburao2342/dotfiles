@@ -1,213 +1,87 @@
 * {
-    font-family: "Inconsolata Nerd Font Bold", sans-serif;
-    font-size: 14px;
+    font-family: Adwaita Sans, sans-serif;
+    font-size: 13px;
     min-height: 0;
-    border-radius: 0;
 }
 
 window#waybar {
-    background-color: transparent;
-    color: #ffffff;
+    background: transparent;
     transition-property: background-color;
-    transition-duration: .5s;
+    color: white;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0;
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
 }
-
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+tooltip label {
+  color: white;
 }
 
 #workspaces button {
-    padding: 4px 8px;
+    padding: 0 5px;
     margin: 2px 2px;
-    background-color: rgba(40, 45, 50, 0.6);
-    color: #ffffff;
-    border-radius: 8px;
-    border: 2px solid rgba(100, 114, 125, 0.5);
-}
-
-#workspaces button:hover {
-    background: rgba(80, 90, 100, 0.7);
-    border: 2px solid rgba(137, 180, 250, 0.7);
+    border-radius: 90px;
+    background: transparent;
+    color: black;
 }
 
 #workspaces button.active {
-    background-color: rgba(100, 114, 125, 0.8);
-    border: 2px solid #89b4fa;
+    border-radius: 90px;
+    background: #A7C080;
 }
 
-#workspaces button.urgent {
-    background-color: #eb4d4b;
+#workspaces button:hover {
+    border-color: #A7C080;
+    border-width: 1.5px;
+    border-style: solid;
+    box-shadow: inherit;
 }
 
-#clock,
-#battery,
-#cpu,i
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd,
-#bluetooth {
-    font-family: "Inconsolata Nerd Font Bold";
-    font-size: inherit;
-    font-weight: 500;
-    padding: 4px 10px;
-    margin: 2px 3px;
-    color: #ffffff;
-    background-color: rgba(40, 45, 50, 0.8);
-    border-radius: 8px;
-    border: 2px solid transparent;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+#clock, #battery {
+    padding: 0 10px;
 }
 
 #clock {
-    border: 2px solid rgba(137, 180, 250, 1);
-    font-weight: 500;
+    background-color: transparent;
+    border: transparent;
+}
+
+#clock:hover {
+    border-radius: 90px;
+    background-color: #D699B6;
+    border-width: 2px;
+    border-style: solid;
+    transition: background-color 0.2s ease;
 }
 
 #battery {
-    border: 2px solid rgba(166, 227, 161, 1);
+    background-color: #ffffff;
+    color: black;
 }
 
-#battery.charging, #battery.plugged {
-    color: #a6e3a1;
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
 }
 
 @keyframes blink {
     to {
-        background-color: #f38ba8;
-        color: #ffffff;
+        background-color: #ffffff;
+        color: black;
     }
 }
 
-#battery.critical:not(.charging) {
-    background-color: #f38ba8;
-    color: #ffffff;
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#backlight {
-    border: 2px solid rgba(249, 226, 175, 1);
-}
-
-#network {
-    border: 2px solid rgba(148, 226, 213, 1);
-}
-
-#network.disconnected {
-    background-color: rgba(243, 139, 168, 0.5);
-}
-
-#pulseaudio {
-    border: 2px solid rgba(245, 194, 231, 1);
-}
-
-#pulseaudio.muted {
-    border: 2px solid rgba(245, 194, 231, 1);
-}
-
-#bluetooth {
-    border: 2px solid rgba(100, 200, 255, 1); 
-}
-
-#tray {
-    border: 2px solid rgba(186, 194, 222, 1);
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    border: 2px solid rgba(116, 199, 236, 1);
-}
-
-#idle_inhibitor.activated {
-    background-color: rgba(166, 227, 161, 0.3);
-    border: 2px solid rgba(166, 227, 161, 1);
-}
-
-
-#custom-power,
-#custom-exit,
-#custom-powermenu {
-    padding: 4px 10px;
-    margin: 2px 3px;
-    color: #ffffff;
-    background-color: rgba(40, 45, 50, 0.8);
-    border-radius: 8px;
-    border: 2px solid #ff0000;
-}
-
-#custom-power:hover,
-#custom-exit:hover,
-#custom-powermenu:hover {
-    background-color: rgba(255, 0, 0, 0.2);
-    border: 2px solid #ff3333;
-}
-
-#scratchpad.empty {
-    background-color: transparent;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 8px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
 }
