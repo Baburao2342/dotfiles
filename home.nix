@@ -35,6 +35,13 @@
     enable = true;
     userName = "Parijat";
     userEmail = "parijatbasak06@gmail.com";
+    signing = {
+      key = "~/.ssh/id_ed25519.pub";
+      signByDefault = true;
+    };
+    extraConfig = {
+      gpg.format = "ssh";
+    };
   };
 
   home.file.".config/bat/config".text = ''
