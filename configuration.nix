@@ -103,6 +103,7 @@
     vim
     kdePackages.oxygen
     wget
+    hicolor-icon-theme
     git
     libnotify
     brightnessctl
