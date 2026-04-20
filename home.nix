@@ -43,14 +43,16 @@
 
   programs.git = {
     enable = true;
-    userName = "Parijat";
-    userEmail = "parijatbasak06@gmail.com";
+    settings = {
+      user = {
+        name = "Parijat";
+        email = "parijatbasak06@gmail.com";
+      };
+      gpg.format = "ssh";
+    };
     signing = {
       key = "~/.ssh/id_ed25519.pub";
       signByDefault = true;
-    };
-    extraConfig = {
-      gpg.format = "ssh";
     };
   };
 
