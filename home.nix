@@ -57,7 +57,11 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      window.opacity = 0.9;
+      window = {
+        opacity = 0.9;
+        padding = 6;
+        dynamic_padding = true;
+      };
       font.normal = {
         family = "JetBrains Mono Nerd Font";
         style = "Regular";

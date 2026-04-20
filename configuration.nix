@@ -102,6 +102,7 @@
   environment.systemPackages = with pkgs; [
     vim
     kdePackages.oxygen
+    auto-cpufreq
     wget
     hicolor-icon-theme
     git
