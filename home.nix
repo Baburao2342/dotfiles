@@ -127,7 +127,7 @@
     };
   };
 
-  home.file.".config/hypr".source = ./config/hypr;
+  home.file.".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
   home.file.".config/waybar".source = ./config/waybar;
   home.file.".config/dunst".source = ./config/dunst;
   home.file.".config/nvim".source = ./config/nvim;
