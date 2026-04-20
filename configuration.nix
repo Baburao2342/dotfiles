@@ -110,6 +110,7 @@
     kdePackages.oxygen
     wget
     hicolor-icon-theme
+    wev
     git
     libnotify
     brightnessctl
