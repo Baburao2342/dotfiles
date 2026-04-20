@@ -10,12 +10,9 @@
     rofimoji
     nil
     ripgrep
-    hyprshot
     wlogout
     waybar
     neovim
-    hyprpaper
-    hypridle
     kdePackages.dolphin
     rofi
     tree
@@ -42,7 +39,48 @@
 
   programs.hyprshot = {
     enable = true;
-    saveLocation = "/home/dog/Pictures/Screenshots";
+    package = pkgs.hyprshot;
+    saveLocation = "~/Pictures/Screenshots";
+  };
+
+  programs.hyprpaper = {
+    enable = true;
+    package = pkgs.hyprpaper;
+    settings = {
+      ipc = "on";
+      space = false;
+
+      preload = [
+        "~/dotfiles/config/Wallpapers/cat_vending_machine.png"
+      ];
+
+      wallpaper = [ ", ~/dotfiles/config/Wallpapers/cat_vending_machine.png" ];
+    };
+  };
+
+  services.hypridle = {
+    enable = true;
+    package = pkgs.hypridle;
+
+    settings = {
+      general = {
+        lock_cmd = "true";
+        before_sleep_cmd = "true";
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+      };
+      listener = [
+        {
+          timeout = 120;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+        {
+          timeout = 240;
+          on-timeout = "systemctl suspend";
+        }
+      ];
+    };
   };
 
   programs.bash = {
