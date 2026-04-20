@@ -50,9 +50,15 @@
     pulse.enable = true;
   };
 
-  services.power-profiles-daemon.enable = false;
-  services.tuned.enable = true;
-  services.upower.enable = true;
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery.governor = "powersave";
+      battery.turbo = "never";
+      charger.governor = "performance";
+      charger.turbo = "auto";
+    };
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -102,7 +108,6 @@
   environment.systemPackages = with pkgs; [
     vim
     kdePackages.oxygen
-    auto-cpufreq
     wget
     hicolor-icon-theme
     git
