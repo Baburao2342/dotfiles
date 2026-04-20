@@ -73,6 +73,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    noto-fonts-emoji
   ];
 
   # Graphics Drivers - NVIDIA
