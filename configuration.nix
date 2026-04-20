@@ -114,6 +114,10 @@
     git
     libnotify
     brightnessctl
+    jq
+    grim
+    wl-clipboard
+    slurp
   ];
 
   nix.settings.experimental-features = [
